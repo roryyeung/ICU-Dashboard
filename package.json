@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "node-XMLHttpRequest": "*",
+    "xmlhttprequest": "^1.8.0"
+  }
+}
