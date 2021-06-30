@@ -74,3 +74,8 @@ p{
 #clock{
     padding-top: 50px;
 }
+
+.index-text{
+    text-align: center;
+    color: black;
+}
