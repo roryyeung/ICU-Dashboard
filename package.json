@@ -1,8 +1,33 @@
 {
   "dependencies": {
+    "express": "^4.17.1",
     "node-XMLHttpRequest": "*",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "xmlhttprequest": "^1.8.0"
-  }
+  },
+  "name": "icu-dashboard",
+  "version": "1.0.0",
+  "description": "An open-source application to simplify communications within an ICU.",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roryyeung/ICU-Dashboard.git"
+  },
+  "keywords": [
+    "ICU",
+    "hospital",
+    "intensive",
+    "care"
+  ],
+  "author": "Rory Yeung",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/roryyeung/ICU-Dashboard/issues"
+  },
+  "homepage": "https://github.com/roryyeung/ICU-Dashboard#readme"
 }
