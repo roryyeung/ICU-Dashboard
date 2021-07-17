@@ -1,38 +1,4 @@
-// Tempoary Data for Page Design
-let liveAnnouncement = 'This string is the first placeholder string. It will be replaced by an API once we have real announcements.';
-
-let testData = [{
-                "Patient Name" : "John Smith",
-                "Patient Level" : "Level 3",
-                "Allergies" : "Penicillin",
-                "Airway Precautions" : "Trachy - Reg Hold",
-                "Spine" : "No Precautions",
-                "NOK" : "Jane Smith",
-                "Personal Notes" : "Enjoys Regge and KPop. Has a dog. Has two small children."
-                }]
-let testEnv = [{
-                "Temperature" : 32,
-                "Sound" : 84
-}]
-
-let testTasks = [{
-    "Time" : "12:15",
-    "Task" : "Drug Administration"
-},
-{
-    "Time" : "12:24",
-    "Task" : "Second Administration"
-}]
-
-// Link to the live elements
-let patientInfo = document.getElementById('patient-info-table');
-let upcomingTasks = document.getElementById('upcoming-tasks-table');
-let enviromentData = document.getElementById('enviroment_data');
-
-// Call the functions to initialise
-setInterval(()=>{createDataTable(patientInfo,testData)}, 1000);
-setInterval(()=>{createDataTable(upcomingTasks,testTasks)}, 1000);
-setInterval(()=>{createDataTable(enviromentData,testEnv)}, 1000);
+export { createDataTable }
 
 // This function creates the data tables for each dataset
 function createDataTable(element,data) {

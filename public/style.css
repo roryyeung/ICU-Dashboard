@@ -80,3 +80,20 @@ p{
     text-align: center;
     color: black;
 }
+
+.flex-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.left-container {
+    width: 70%;
+}
+
+.right-container {
+    width: 30%;
+}
+
+.flex-container section{
+    margin: 10px 10px;
+}
