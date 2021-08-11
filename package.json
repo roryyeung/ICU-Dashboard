@@ -5,11 +5,16 @@
   "main": "app.js",
   "dependencies": {
     "cookie-parser": "^1.4.5",
+    "debug": "^4.3.2",
     "express": "^4.17.1",
     "express-generator": "^4.16.1",
     "morgan": "^1.10.0",
     "node": "^16.6.1",
-    "swagger": "^0.7.5"
+    "swagger": "^0.7.5",
+    "swagger-tools": "^0.10.4",
+    "swagger-ui-express": "^4.1.6",
+    "yamljs": "^0.3.0",
+    "swagger-express-router": "latest"
   },
   "devDependencies": {},
   "scripts": {
