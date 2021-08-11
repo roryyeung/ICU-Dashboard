@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ICU Dashboard</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+  <link rel="stylesheet" type="text/css" href="../stylesheets/style.css" />
+</head>
+<body>
+    <div class="container" id="dashboard_container">
+        <header class="header" id='dashboard_header'>
+            <img>
+            <h1>ICU Dashboard</h1>
+        </header>
+        <content class="data_box" id="beds_table">
+            <h2>Bed Status</h2>
+            <!-- The section below is tempoary, for mockup purposes -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Bed</th>
+                        <th>Status</th>
+                        <th>Infections</th>
+                        <th>Precautions</th>
+                        <th>Allergies</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td class='Occupied'>Occupied</td><td>-</td><td class='Attention'>Trachy</td><td>-</td></tr>
+                    <tr><td>2</td><td class='Occupied'>Occupied</td><td class='Attention'>MRSA</td><td>-</td><td>-</td></tr>
+                    <tr><td>3</td><td class='Occupied'>Occupied</td><td>-</td><td>-</td><td class='Attention'>Peanuts</td></tr>
+                    <tr><td>4</td><td class='Empty'>Empty</td><td>-</td><td>-</td><td>-</td></tr>
+                    <tr><td>5</td><td class='Occupied'>Occupied</td><td>-</td><td>-</td><td>-</td></tr>
+                    <tr><td>6</td><td class='Occupied'>Occupied</td><td>-</td><td>Spinal</td><td>-</td></tr>
+                    <tr><td>7</td><td class='Occupied'>Occupied</td><td class='Attention'>COVID</td><td class='Attention'>Trachy</td><td>-</td></tr>
+                    <tr><td>8</td><td class='Occupied'>Occupied</td><td>-</td><td>-</td><td>-</td></tr>
+                    <tr><td>9</td><td class='Empty'>Empty</td><td>-</td><td class='Attention'>Trachy</td><td class='Attention'>Penacillin</td></tr>
+                    <tr><td>10</td><td class='Occupied'>Occupied</td><td>-</td><td>-</td><td>-</td></tr>
+                    <tr><td>11</td><td class='Occupied'>Occupied</td><td>-</td><td>-</td><td>-</td></tr>
+                    <tr><td>12</td><td class='Occupied'>Occupied</td><td class='Attention'>COVID</td><td>Trachy</td><td>-</td></tr>
+                    <tr><td>13</td><td class='Occupied'>Occupied</td><td>-</td><td>-</td><td>-</td></tr>
+                    <tr><td>14</td><td class='Empty'>Empty</td><td>-</td><td class='Attention'>Spinal</td><td>-</td></tr>
+                    <tr><td>15</td><td class='Occupied'>Occupied</td><td>-</td><td>-</td><td>-</td></tr>
+                    <tr><td>16</td><td class='Empty'>Empty</td><td>-</td><td>-</td><td>-</td></tr>
+                </tbody>
+            </table>
+            <!-- End mockup section -->
+            <script language="JavaScript">
+                /*
+                Script goes here to read SQL Restful API. This produces the required main table.
+                */
+            </script>
+        </content>
+<!-- Tube status removed -->
+<!--
+        <content class="data_box" id="train_api">
+            <div style="width:260px"><script language="JavaScript" src="https://www.tfl.gov.uk/tfl/syndication/widgets/serviceboard/embeddable/serviceboard-iframe-stretchy.js"></script></div>
+        -->
+<!-- Removed to simplify widget -->
+<!--
+            <h2>TFL Status</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Line</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Circle Line</td>
+                        <td id="circle_status">Status Pending</td>
+                    </tr>
+                    <tr>
+                        <td>District Line</td>
+                        <td id="district_status">Status Pending</td>
+                    </tr>
+                    <tr>
+                        <td>Hammersmith and City</td>
+                        <td id="hammersmith_status">Status Pending</td>
+                    </tr>
+                </tbody>
+            </table>
+            <script>
+                /* Request linestatus data from TFL API https://tfl.gov.uk/info-for/open-data-users/api-documentation */
+                var xml_url = "http://cloud.tfl.gov.uk/TrackerNet/LineStatus"
+
+                /* Function to send XML Request */
+
+                var request = new XMLHttpRequest()
+                request.open('GET', xml_url, true)
+                request.onload = function () {
+                                            var xmlDoc = request.responseXML //save the reply
+                                            var nodetree = xmlDoc.getElementsByTagName("LineStatus") // select the part of the reply stored in "Linestatus"
+                                            // The code below selects the status descriptions of the lines and stores them as:
+                                            // distStatus, circStatus and hammStatus
+                                            for(i = 0; i < nodetree.length ;i++){
+                                                if(nodetree[i].getElementsByTagName("Line").getAttribute("Name") == "District"){
+                                                    var distStatus = nodetree[i].getElementsByTagName("Status").getAttribute("Description");
+                                                    document.getElementById("district_status").innerHTML=distStatus;
+                                                }else if(nodetree[i].getElementsByTagName("Line").getAttribute("Name") == "Circle"){
+                                                    var circStatus = nodetree[i].getElementsByTagName("Status").getAttribute("Description");
+                                                    document.getElementById("circle_status").innerHTML=circStatus;
+                                                }else if(nodetree[i].getElementsByTagName("Line").getAttribute("Name") == "Hammersmith and City"){
+                                                    var hammStatus = nodetree[i].getElementsByTagName("Status").getAttribute("Description");
+                                                    document.getElementById("hammersmith_status").innerHTML=hammStatus;
+                                                }
+                                                }
+                                            }
+                request.send()
+            </script>
+-->
+<!--
+        </content>
+    </div>
+-->
+</body>
+</html>

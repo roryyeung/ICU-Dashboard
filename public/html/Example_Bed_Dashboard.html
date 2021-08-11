@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bedspace 16 Dashboard</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+  <link rel="stylesheet" type="text/css" href="../stylesheets/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <!-- Contains Top Bar -->
+        <div class="header-flex-container">
+            <div id="clock">XX:XX</div>
+            <img src="./images/NHS Imperial Logo.png" id="logo" />
+        </div>
+        <div class="NHS-Bar">
+            <h1>Bedspace 16</h1>
+        </div>
+    </header>
+    <main class="flex-container">
+        <!-- Contains content -->
+    <div class="left-container">
+        <section id="patient-info">
+            <h2>Patient Information</h2>
+            <div id="patient-info-table">Awaiting Data</div>
+            <p>This list is not authoratitive - check ICIP.</p>
+        </section>
+        <section id="upcoming-tasks">
+            <h2>Upcoming Tasks</h2>
+            <div id="upcoming-tasks-table">Awaiting Data</div>
+            <p>This list is not authoratitive - check ICIP.</p>
+        </section>
+    </div>
+    <div class="right-container">
+        <section id="warnings">
+            <h2>Warnings</h2>
+            <div id="beds_1to16"><p>Awaiting Data</p></div>
+            <p>Technical warnings from our system</p>
+        </section>
+        <section id="enviroment">
+            <h2>Enviroment</h2>
+            <div id="enviroment_data"><p>Awaiting Data</p></div>
+            <p>Temperature and sound data captured by this module.</p>
+        </section>
+        <section id="control_instructions">
+            <h2>Controls</h2>
+            <p>Press red to reset warnings.</p>
+            <p>Press yellow to report technical fault. </p>
+            <p>Press green to request Float Nurse.</p>
+            <p>Press blue to request HCA.</p>
+        </section>
+    </div>
+    </main>
+    <footer>
+        <!-- Contains footer information -->
+        <div class="NHS-Bar">
+            <table class="Pager-Bar">
+                <tbody>
+                    <tr>
+                        <td>
+                            Floor Coordinator
+                        </td>
+                        <td id="FC-Name">Name Loading</td>
+                        <td>
+                            +44 XXXX XXX XXX
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nurse In Charge</td>
+                        <td id="NIC-16-Name">Name Loading</td>
+                        <td>XXXX</td>
+                    </tr>
+                    <tr>
+                        <td>HCA</td>
+                        <td id="HCA-Name">Name Loading</td>
+                        <td>XXXX</td>
+                    </tr>
+                    <tr>
+                        <td>Porter</td>
+                        <td id="Porter-Name">Name Loading</td>
+                        <td>XXXX</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </footer>
+    <script src='./javascript/clock.js'></script>
+    <script src='./javascript/bedspace.js'></script>
+</body>
+
