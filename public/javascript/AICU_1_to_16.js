@@ -2,17 +2,78 @@
 let liveAnnouncement = 'This string is the first placeholder string. It will be replaced by an API once we have real announcements.';
 
 let testData = [{
-                "name" : "Bed 1",
-                "data1" : "A",
-                "data2" : "B",
-                "HCA Requested" : "C"
+                "Name" : "Bed 1",
+                "Status" : "Level 2",
+                "Nurse" : "Name",
+                "Infections" : "COVID",
+                "Precautions" : "N/A",
+                "Last Rolled": "04:00",
+                "Help Requested" : "HCA"
                 },
                 {
-                "name" : "Bed 2",
-                "data1" : "A",
-                "data2" : "B",
-                "HCA Requested" : "C"
-                }]
+                "Name" : "Bed 2",
+                "Status" : "Level 2",
+                "Nurse" : "Name",
+                "Infections" : "C. Diff.",
+                "Precautions" : "Airway",
+                "Last Rolled": "07:23",
+                "Help Requested" : "Cleaner"
+                },
+                {
+                "Name" : "Bed 3",
+                "Status" : "Empty",
+                "Nurse" : "Name",
+                "Infections" : "N/A",
+                "Precautions" : "N/A",
+                "Last Rolled": "N/A",
+                "Help Requested" : "N/A"
+                },
+                {
+                "Name" : "Bed 4",
+                "Status" : "Level 3",
+                "Nurse" : "N/A",
+                "Infections" : "N/A",
+                "Precautions" : "N/A",
+                "Last Rolled": "Self-Mobilising",
+                "Help Requested" : "N/A"
+                },
+                {
+                "Name" : "Bed 5",
+                "Status" : "Level 1",
+                "Nurse" : "Name",
+                "Infections" : "N/A",
+                "Precautions" : "N/A",
+                "Last Rolled": "04:00",
+                "Help Requested" : "N/A"
+                },
+                {
+                "Name" : "Bed 6",
+                "Status" : "Level 3",
+                "Nurse" : "Name",
+                "Infections" : "N/A",
+                "Precautions" : "N/A",
+                "Last Rolled": "04:00",
+                "Help Requested" : "N/A"
+                },
+                {
+                "Name" : "Bed 7",
+                "Status" : "Empty",
+                "Nurse" : "Name",
+                "Infections" : "N/A",
+                "Precautions" : "N/A",
+                "Last Rolled": "N/A",
+                "Help Requested" : "N/A"
+                },
+                {
+                "Name" : "Bed 8",
+                "Status" : "Level 2",
+                "Nurse" : "Name",
+                "Infections" : "N/A",
+                "Precautions" : "N/A",
+                "Last Rolled": "04:00",
+                "Help Requested" : "HA"
+                }
+            ]
 
 // Link to the live elements
 let announcements = document.getElementById('announcements-text');
@@ -24,6 +85,8 @@ function readAnnouncements() {
     var date = new Date(); /* creating object of Date class */
     var sec = date.getSeconds();
     announcements.innerText = `${liveAnnouncement} If this number is changing, the page is live: ${sec}`;
+    // Add the primary_content class
+    announcements.classList.add('primary_content');
 };
 
 function readBedsTable() {
@@ -73,6 +136,7 @@ function readBedsTable() {
      for (var i = 0; i < col.length; i++) {
          var th = document.createElement("th");      // TABLE HEADER.
          th.innerHTML = col[i];
+         th.classList.add('header_cell');
          tr.appendChild(th);
      }
 
@@ -83,9 +147,15 @@ function readBedsTable() {
 
          for (var j = 0; j < col.length; j++) {
              var tabCell = tr.insertCell(-1);
+             tr.classList.add('row_cell');
              tabCell.innerHTML = testData[i][col[j]];
          }
      }
+
+    
+    // Add the primary_table class
+    table.classList.add('primary_table');
+    
     // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
     bedsTable.innerHTML = "";
     bedsTable.appendChild(table);     

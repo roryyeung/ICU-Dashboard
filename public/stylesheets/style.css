@@ -97,3 +97,26 @@ p{
 .flex-container section{
     margin: 10px 10px;
 }
+
+.primary_table{
+    justify-items: stretch;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+}
+
+.primary_content{
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.header_cell{
+    padding: 15px;
+}
+
+.row_cell{
+    padding: 15px;
+}
